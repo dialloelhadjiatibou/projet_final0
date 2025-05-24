@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Détails du véhicule - ModernAuto</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="details.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">ModernAuto</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="voitures.html">Voitures</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="inscription.html">S’inscrire</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- DÉTAILS VOITURE -->
+  <main class="details-container" id="detailsContainer">
+    <h1 id="titreVoiture">Chargement...</h1>
+    <div class="car-details">
+      <img id="voitureImage" src="" alt="Image de voiture" class="main-img" />
+
+      <div class="description">
+        <p id="voitureDescription">Chargement des informations...</p>
+
+        <h3>Caractéristiques techniques :</h3>
+        <ul>
+          <li><strong>Année :</strong> <span id="annee"></span></li>
+          <li><strong>Carburant :</strong> <span id="carburant"></span></li>
+          <li><strong>Boîte :</strong> <span id="boite"></span></li>
+          <li><strong>Kilométrage :</strong> <span id="kilometrage"></span></li>
+          <li><strong>Couleur :</strong> <span id="couleur"></span></li>
+          <li><strong>Prix :</strong> <span id="prix"></span></li>
+        </ul>
+
+        <a href="contact.html" class="btn">Je suis intéressé</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 ModernAuto Sénégal. Tous droits réservés.</p>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    const voituresData = {
+      "mercedes-c300": {
+        titre: "Mercedes C300",
+        image: "images/mercedes-c300.jpg",
+        description: "Une berline alliant luxe, puissance et technologie.",
+        annee: "2022",
+        carburant: "Essence",
+        boite: "Automatique",
+        kilometrage: "18 000 km",
+        couleur: "Noir",
+        prix: "28 500 000 FCFA"
+      },
+      "bmw-x6": {
+        titre: "BMW X6",
+        image: "images/bmw-x6.jpg",
+        description: "Un SUV sportif et luxueux pour toutes vos envies.",
+        annee: "2021",
+        carburant: "Diesel",
+        boite: "Automatique",
+        kilometrage: "22 000 km",
+        couleur: "Gris métallisé",
+        prix: "35 000 000 FCFA"
+      },
+      "tesla-model-s": {
+        titre: "Tesla Model S",
+        image: "images/tesla-model-s.jpg",
+        description: "Berline 100% électrique avec des performances incroyables.",
+        annee: "2022",
+        carburant: "Électrique",
+        boite: "Automatique",
+        kilometrage: "10 000 km",
+        couleur: "Blanc perle",
+        prix: "40 000 000 FCFA"
+      },
+      "lamborghini-aventador": {
+        titre: "Lamborghini Aventador",
+        image: "images/lamborghini-aventador.jpg",
+        description: "Un monstre de puissance et de design italien.",
+        annee: "2020",
+        carburant: "Essence",
+        boite: "Manuelle",
+        kilometrage: "8 000 km",
+        couleur: "Jaune",
+        prix: "120 000 000 FCFA"
+      },
+      "rolls-phantom": {
+        titre: "Rolls-Royce Phantom",
+        image: "images/rolls-phantom.jpg",
+        description: "Le summum du luxe automobile britannique.",
+        annee: "2021",
+        carburant: "Essence",
+        boite: "Automatique",
+        kilometrage: "15 000 km",
+        couleur: "Noir",
+        prix: "150 000 000 FCFA"
+      },
+      "range-rover-sport": {
+        titre: "Range Rover Sport",
+        image: "images/range-rover-sport.jpg",
+        description: "Un SUV puissant et confortable, taillé pour l'aventure.",
+        annee: "2022",
+        carburant: "Diesel",
+        boite: "Automatique",
+        kilometrage: "12 000 km",
+        couleur: "Bleu nuit",
+        prix: "38 000 000 FCFA"
+      }
+    };
+
+    function getParam(key) {
+      const url = new URL(window.location.href);
+      return url.searchParams.get(key);
+    }
+
+    const voitureKey = getParam("voiture");
+    const data = voituresData[voitureKey];
+
+    if (data) {
+      document.getElementById("titreVoiture").textContent = data.titre;
+      document.getElementById("voitureImage").src = data.image;
+      document.getElementById("voitureImage").alt = data.titre;
+      document.getElementById("voitureDescription").textContent = data.description;
+      document.getElementById("annee").textContent = data.annee;
+      document.getElementById("carburant").textContent = data.carburant;
+      document.getElementById("boite").textContent = data.boite;
+      document.getElementById("kilometrage").textContent = data.kilometrage;
+      document.getElementById("couleur").textContent = data.couleur;
+      document.getElementById("prix").textContent = data.prix;
+    } else {
+      document.getElementById("detailsContainer").innerHTML = "<p style='text-align:center; font-size:1.2rem;'>Voiture non trouvée.</p>";
+    }
+  </script>
+
+</body>
+</html>

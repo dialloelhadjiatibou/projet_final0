@@ -1,0 +1,221 @@
+/* === Conteneur principal === */
+.voitures-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+/* === Carte individuelle === */
+.voiture-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  padding: 1rem;
+  text-align: center;
+}
+
+.voiture-card:hover {
+  transform: scale(1.02);
+}
+
+.voiture-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.voiture-card h3 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+.voiture-card p {
+  margin: 0.3rem 0;
+  color: #555;
+}
+
+/* === Bouton Voir Détails === */
+.voiture-card .btn {
+  display: inline-block;
+  margin-top: 0.8rem;
+  padding: 10px 20px;
+  background-color: #f39c12;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.voiture-card .btn:hover {
+  background-color: #0056b3;
+}
+
+/* === Recherche === */
+.recherche-container {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+.recherche-container input[type="text"] {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* === Aucun résultat === */
+.no-results {
+  color: red;
+  font-style: italic;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+/* === Détails Voiture === */
+.details-container {
+  padding: 2rem;
+  background-color: #fff;
+}
+
+#detailsContent {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+#detailsContent img {
+    height: 100%;
+    max-height: 500px;
+    width: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    flex: 1 1 40%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  
+}
+
+.voiture-infos {
+  flex: 1 1 55%;
+}
+
+.voiture-infos h2 {
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.voiture-infos p {
+  color: #444;
+  font-size: 16px;
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+
+/* === Bouton retour === */
+.btn-retour {
+  display: inline-block;
+  background-color: #f39c12;
+  color: white;
+  padding: 10px 16px;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-retour:hover {
+  background-color: #0056b3;
+}
+
+/* === Bouton Ça m'intéresse === */
+.btn-interet {
+  margin-top: 1.5rem;
+  padding: 12px 20px;
+  background-color: #f39c12;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: fit-content;
+}
+
+.btn-interet:hover {
+  background-color: #0056b3;
+}
+
+/* Call to Action */
+.cta {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #222;
+  color: white;
+}
+
+.cta p {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.cta .btn {
+  background-color: #f39c12;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.cta .btn:hover {
+  background-color: #0056b3;
+}
+
+/* === Responsive Design pour la section détails === */
+@media screen and (max-width: 768px) {
+  #detailsContent {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #detailsContent img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .voiture-infos {
+    width: 100%;
+  }
+
+  .voiture-infos h2 {
+    font-size: 1.5rem;
+  }
+
+  .voiture-infos p {
+    font-size: 1rem;
+  }
+
+  .btn-interet {
+    width: 100%;
+  }
+}
