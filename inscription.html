@@ -15,6 +15,8 @@
       <img src="images/a922ed4ac4c61cb0ed988a2d3bbc148e928ec6dd1563b8d8962d0ce3908b5aba.jpeg" alt="ModernAuto Logo" class="logo">
     </div>
 
+    <div id="message" class="confirmation-message" style="display: none;"></div>
+
     <!-- Formulaire d'inscription -->
     <form class="inscription-form">
       <h2>Inscrivez-vous pour recevoir nos meilleures offres</h2>
@@ -49,21 +51,32 @@
     🎉 Inscription réussie !
   </div>
   
-  <script>
-    const form = document.querySelector('.inscription-form');
-    const message = document.getElementById('confirmationMessage');
-  
-    form.addEventListener('submit', function (e) {
-      e.preventDefault(); // Empêche l'envoi réel
-      message.classList.remove('hidden');
-  
-      // Réinitialise le formulaire après 2 secondes
-      setTimeout(() => {
-        message.classList.add('hidden');
-        form.reset();
-      }, 2500);
-    });
-  </script>
-  
+ <script>
+  const form = document.querySelector('.inscription-form');
+  const message = document.getElementById('message');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Affichage du message
+    message.textContent = "Inscription réussie !";
+    message.style.display = "block";
+    message.style.backgroundColor = "#2ecc71";
+    message.style.color = "white";
+    message.style.padding = "12px";
+    message.style.marginBottom = "15px";
+    message.style.borderRadius = "6px";
+    message.style.textAlign = "center";
+
+    // Disparition automatique après 2,5 secondes
+    setTimeout(() => {
+      message.style.display = "none";
+    }, 2500);
+
+    // Réinitialisation du formulaire
+    form.reset();
+  });
+</script>
+
 </body>
 </html>
