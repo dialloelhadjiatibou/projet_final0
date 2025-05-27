@@ -1,0 +1,68 @@
+/* === Hero Section pour À propos === */
+.hero-a-propos {
+    background-image: url('images/a922ed4ac4c61cb0ed988a2d3bbc148e928ec6dd1563b8d8962d0ce3908b5aba.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  }
+  
+  .hero-a-propos .hero-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-a-propos .hero-content p {
+    font-size: 1.4rem;
+    font-weight: 300;
+  }
+  
+  /* === Contenu À propos === */
+  .container h1, .container h2 {
+    color:black;
+    font-weight: 600;
+    text-align: left;
+  }
+  
+  .container p, .container ul {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  
+  /* === Liste stylisée === */
+  .container ul li {
+    margin-bottom: 0.8rem;
+  }
+  
+  /* === Bouton principal === */
+  .btn {
+    display: inline-block;
+    background-color: #f39c12;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* === Footer propre === */
+  footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 4rem;
+    font-size: 0.9rem;
+  }
+  
