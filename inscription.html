@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inscription - ModernAuto</title>
+  <link rel="stylesheet" href="inscription.css" />
+</head>
+<body>
+
+  <div class="inscription-container">
+
+    <!-- Logo -->
+    <div class="logo-container">
+      <img src="images/a922ed4ac4c61cb0ed988a2d3bbc148e928ec6dd1563b8d8962d0ce3908b5aba.jpeg" alt="ModernAuto Logo" class="logo">
+    </div>
+
+    <!-- Formulaire d'inscription -->
+    <form class="inscription-form">
+      <h2>Inscrivez-vous pour recevoir nos meilleures offres</h2>
+
+      <label for="nom">Nom complet :</label>
+      <input type="text" id="nom" name="nom" required>
+
+      <label for="email">Adresse email :</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="telephone">Téléphone (optionnel) :</label>
+      <input type="tel" id="telephone" name="telephone">
+
+      <label for="voiture">Voiture recherchée :</label>
+      <select id="voiture" name="voiture">
+        <option value="">-- Choisir un modèle --</option>
+        <option value="mercedes-c300">Mercedes C300</option>
+        <option value="bmw-x6">BMW X6</option>
+        <option value="tesla-model-s">Tesla Model S</option>
+        <option value="lamborghini-aventador">Lamborghini Aventador</option>
+        <option value="rolls-phantom">Rolls-Royce Phantom</option>
+        <option value="range-rover-sport">Range Rover Sport</option>
+      </select>
+
+      <button type="submit" class="btn">S’inscrire</button>
+    </form>
+
+  </div>
+
+  <!-- Message de confirmation -->
+<div id="confirmationMessage" class="confirmation-popup hidden">
+    🎉 Inscription réussie !
+  </div>
+  
+  <script>
+    const form = document.querySelector('.inscription-form');
+    const message = document.getElementById('confirmationMessage');
+  
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); // Empêche l'envoi réel
+      message.classList.remove('hidden');
+  
+      // Réinitialise le formulaire après 2 secondes
+      setTimeout(() => {
+        message.classList.add('hidden');
+        form.reset();
+      }, 2500);
+    });
+  </script>
+  
+</body>
+</html>
