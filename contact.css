@@ -1,0 +1,75 @@
+/* === Conteneur principal === */
+.contact-container {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* === En-tête === */
+  .title {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .title h1 {
+    color: #222;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .title p {
+    color: #555;
+    font-size: 1.1rem;
+  }
+  
+  /* === Formulaire === */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  
+  .contact-form label {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1.5px solid #ddd;
+    font-size: 16px;
+    width: 100%;
+    transition: border-color 0.3s;
+  }
+  
+  .contact-form input:focus,
+  .contact-form select:focus,
+  .contact-form textarea:focus {
+    border-color: #f39c12;
+    outline: none;
+  }
+  
+  /* === Bouton Envoyer === */
+  .btn-envoyer {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+  }
+  
+  .btn-envoyer:hover {
+    background-color: #0056b3;
+  }
+  
